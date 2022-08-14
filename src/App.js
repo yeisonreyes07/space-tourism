@@ -4,6 +4,7 @@ import Menu from "./componentes/Menu";
 import Home from "./componentes/Home";
 import Contenedor from "./elementos/Contenedores";
 import BackgroundHome from "./imagenes/home/background-home-desktop.jpg";
+import BackgroundHomeMobile from "./imagenes/home/background-home-mobile.jpg";
 import BackgroundDestination from "./imagenes/destination/background-destination-desktop.jpg";
 import BackgroundCrew from "./imagenes/crew/background-crew-desktop.jpg"
 import BackgroundTechnology from "./imagenes/technology/background-technology-desktop.jpg"
@@ -15,7 +16,7 @@ function App() {
   return (
     <>
       <Menu />
-      <Contenedor imagenFondo={BackgroundHome} gridTemplateColumns={'70% 1fr'} gridTemplateRows={'50px 1fr'} paadding={'0 5%'}>
+      <Contenedor imagenFondo={BackgroundHome} imagenFondoMobile={BackgroundHomeMobile} gridTemplateColumns={'70% 1fr'} gridTemplateRows={'50px 1fr'} paadding={'0 5%'}>
         <Home />
       </Contenedor>
       <Contenedor imagenFondo={BackgroundDestination} gridTemplateColumns={'70% 1fr'} gridTemplateRows={'50px 50px 1fr'} paadding={'0 5%'}>

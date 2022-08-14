@@ -1,9 +1,17 @@
-import React from 'react'
+import React , {useState } from 'react'
 import styled from 'styled-components'
-import {Tituloh1, Tituloh5, ContenidoSpan} from '../elementos/Textos'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faBars } from '@fortawesome/free-solid-svg-icons/faBars'
+import { faXmark } from '@fortawesome/free-solid-svg-icons/faXmark'
+import { Tituloh5, ContenidoSpan} from '../elementos/Textos'
 import Logo from '../imagenes/shared/logo.svg'
 
+
+
 const Menu = () => {
+
+    const [iconMenu, setIcon] = useState(faBars);
+
     return (
        <DivFixed>
         <Div>
@@ -26,7 +34,14 @@ const Menu = () => {
                     <ContenidoSpan fontSize={'16px'} margin={'0 5px'}>03 </ContenidoSpan>
                     <Tituloh5 fontSize={'16px'}> TECHNOLOGY</Tituloh5>
                 </LiMenu>
+                
             </UlMenu>
+            <UlMenuMobile>
+                <LiMenu backgroundColor="transparent">
+                     <FontAwesomeIcon icon={ iconMenu } color={ '#D0D6F9' }  size={ 42 } onClick={() => iconMenu === faBars ? setIcon(faXmark) :  setIcon(faBars) }/>
+                     
+                </LiMenu>
+            </UlMenuMobile>
 
         </Div>
         </DivFixed> 
@@ -41,6 +56,17 @@ position:fixed;
 width:100%;
 padding:1% 0;
 z-index:9; 
+
+@media (max-width:767px){
+
+    position:fixed ;
+    top:1%;
+    justify-content:space-between;
+    background-color:transparent;
+    align-content: center;
+    align-items: center;
+   
+}
 `
 const Div = styled.div`
 
@@ -54,6 +80,15 @@ display: grid;
     align-content: center;
     align-items: center;
     justify-items: center;
+    @media (max-width:767px){
+
+        display:flex ;
+        justify-content:space-between;
+        padding: 2% 2%;
+        width: 100%;
+        align-content: center;
+        align-items: center;
+    }
 `
 const ImgLogo = styled.img`
 grid-column:1;
@@ -67,6 +102,10 @@ width: 105%;
     height: 1px;
     z-index: 9;
 
+    @media (max-width:767px){
+
+        display:none ;
+    }
 `
 const UlMenu = styled.ul`
 
@@ -84,10 +123,32 @@ grid-column: 3 / 4;
     backdrop-filter: blur(5px);
     padding:30px 0;
 
+    @media (max-width:767px){
+
+        display:none ;
+    }
+
 `
+const UlMenuMobile = styled.ul `
+    color: white;
+    cursor: pointer;
+    margin: 0.5em 1em;
+    padding: 0.25em 1em;
+    border-radius: 3px;
+    font-size:32px;
+
+
+    @media (min-width:767px){
+
+        display:none !important;
+    }
+    @media(max-width: 467px) {
+        
+      }
+  `
 
 const LiMenu = styled.li`
 display:flex;
-
+background-color:none;
 `
 

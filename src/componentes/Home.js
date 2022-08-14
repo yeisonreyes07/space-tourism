@@ -16,7 +16,7 @@ const Home = () => {
         and not hover kind of on the edge of it. Well sit back, and relax because we’ll 
         give you a truly out of this world experience!
         </Contenidop>
-        </Div>
+    </Div>
         <Divcirculo>
             <Link href="#">
             <Circulo onMouseEnter="exploreEnter">
@@ -34,7 +34,7 @@ const DivSlides = styled.div`
 
   scroll-snap-align:start;
   display:contents;
-
+  padding:2rem 0;
 `
 
 const Div = styled.div`
@@ -107,7 +107,13 @@ display: flex;
     -ms-transform: scale(0.85);
     transform: scale(0.85);
 }
+@media (max-width:767px){
 
+}
+@media (max-width:467px){
+    width:150px;
+    height:150px;
+}
 `
 
 

@@ -40,6 +40,16 @@ export default createGlobalStyle`
   margin:0;
   text-align:left;
   grid-column:${(props) =>  props.gridColumn ? props.gridColumn : '1'};
+
+  @media(max-width: 767px) {
+    font-size:9rem;
+    word-break: break-word;
+    text-align:center;
+    }
+  @media(max-width: 467px) {
+    font-size:5rem;
+    word-break: break-word;
+  }
 `
 const Tituloh2 = styled.h2` 
   font-family:'Bellefair', serif;
@@ -64,6 +74,15 @@ const Tituloh4 = styled.h4`
         letter-spacing:4.75px;
         margin:0;
         grid-column:${(props) =>  props.gridColumn ? props.gridColumn : '1'};
+
+        @media(max-width: 767px) {
+          font-size:20px;
+          
+          }
+        @media(max-width: 467px) {
+          font-size:16px;
+          
+        }
     `
 const Tituloh5 = styled.h5` 
       font-family:${(props) => props.fontFamily ? props.fontFamily : 'Barlow' };
@@ -77,6 +96,18 @@ const Tituloh5 = styled.h5`
         margin:${(props) => props.margin ? props.margin : '0' };
         grid-column:${(props) =>  props.gridColumn ? props.gridColumn : '1'};
         user-select: none;
+
+        @media(max-width: 767px) {
+          word-wrap:break-word;
+          text-align:center;
+          font-size:20px;
+        }
+
+        @media(max-width: 467px) {
+          word-wrap:break-word;
+          text-align:center;
+          font-size:16px;
+        }
     `
 const Contenidop = styled.p` 
       font-family: ${(props) => props.fontFamily ? props.fontFamily : 'Barlow' };
@@ -95,7 +126,15 @@ const Contenidop = styled.p`
       padding:${(props) => props.padding ? props.padding : '0'};
       letter-spacing:${(props) => props.letterSpacing ? props.letterSpacing : ''};
       user-select: none;
-`
+      
+      @media(max-width: 767px) {
+          word-wrap:break-word;
+          text-align:center;
+          font-size:16px;
+        }
+      
+
+      `
 
 const ContenidoSpan = styled.span`
   font-family:${(props) => props.fontFamily ? props.fontFamily : 'Barlow' };
