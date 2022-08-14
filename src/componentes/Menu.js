@@ -42,8 +42,37 @@ const Menu = () => {
                      
                 </LiMenu>
             </UlMenuMobile>
-
+           
         </Div>
+        {iconMenu === faXmark ? 
+            
+            <DivOpenMenu>
+                <UlMenuSidebar>
+                <LiMenu>
+                    <ContenidoSpan fontSize={'16px'} margin={'0 5px'}>00 </ContenidoSpan>
+                    <Tituloh5 fontSize={'16px'}> HOME</Tituloh5>
+                </LiMenu>
+                <LiMenu>
+                    <ContenidoSpan fontSize={'16px'} margin={'0 5px'}>01 </ContenidoSpan>
+                    <Tituloh5 fontSize={'16px'}> DESTINATION</Tituloh5>
+                </LiMenu>
+                <LiMenu>
+                    <ContenidoSpan fontSize={'16px'} margin={'0 5px'}>02 </ContenidoSpan>
+                    <Tituloh5 fontSize={'16px'}> CREW</Tituloh5>
+                </LiMenu>
+                <LiMenu>
+                    <ContenidoSpan fontSize={'16px'} margin={'0 5px'}>03 </ContenidoSpan>
+                    <Tituloh5 fontSize={'16px'}> TECHNOLOGY</Tituloh5>
+                </LiMenu>
+                
+            </UlMenuSidebar>
+            </DivOpenMenu>
+        
+            :
+
+            <></> 
+
+            }
         </DivFixed> 
     )
 }
@@ -68,6 +97,26 @@ z-index:9;
    
 }
 `
+const DivOpenMenu = styled.div`
+  height: 100%; 
+  width: 70%; 
+  position: fixed; 
+  z-index: 9; 
+  top: 0; 
+  right: 0;
+  background-color: rgba(255, 255, 255, .15);  
+  backdrop-filter: blur(18px);
+  overflow-x: hidden; 
+  padding-top: 60px; 
+  transition: 0.5s;
+
+@media (min-width:767px){
+
+   display:none;
+   
+}
+`
+
 const Div = styled.div`
 
 display: grid;
@@ -136,7 +185,7 @@ const UlMenuMobile = styled.ul `
     padding: 0.25em 1em;
     border-radius: 3px;
     font-size:32px;
-
+    z-index:10;
 
     @media (min-width:767px){
 
@@ -146,9 +195,30 @@ const UlMenuMobile = styled.ul `
         
       }
   `
+  const UlMenuSidebar = styled.ul `
+    color: white;
+    cursor: pointer;
+    border-radius: 3px;
+    font-size:32px;
+    z-index:10;
+
+    @media (min-width:767px){
+
+        display:none ;
+    }
+    @media(max-width: 467px) {
+        
+      }
+  `
 
 const LiMenu = styled.li`
 display:flex;
 background-color:none;
+z-index:10;
+@media (max-width:767px){
+
+    padding: 1rem 0;
+}
+
 `
 
