@@ -45,17 +45,17 @@ const TabsInfo = (props) => {
             })}</>
 		
 		<>{Destinations === undefined ? <h2> OOps! ocurrio un error, intentelo de nuevo</h2> : Destinations.map((info, index) => {
-			return <>{tab === index ?  <><Contenidop className='tabs' fontSize={'18px'} key={info.index}>{info.description}</Contenidop>
+			return <>{tab === index ?  <><Contenidop className='tabs' fontSize={'18px'} widthContainer={'80%'} key={info.index}>{info.description}</Contenidop>
 
 			<Separator/>
 			<DivExtra>
 				<DivDistancia>
-					<ContenidoSpan fontSize={'14px'} fontWeight={'100'}>AVG. DISTANCE</ContenidoSpan>
-					<Contenidop fontSize={'28px'} fontFamily={'Bellefair'} textTransform={'uppercase'} padding={'10px 0'}>{info.distance}</Contenidop>
+					<ContenidoSpan fontSize={'14px'}  fontWeight={'100'}>AVG. DISTANCE</ContenidoSpan>
+					<Contenidop fontSize={'28px'} fontSizeMobile={'28px'} fontFamily={'Bellefair'} textTransform={'uppercase'} padding={'10px 0'}>{info.distance}</Contenidop>
 				</DivDistancia>
 				<DivTravel>
 					<ContenidoSpan fontSize={'14px'} fontWeight={'100'}>EST. TRAVEL TIME</ContenidoSpan>
-					<Contenidop fontSize={'28px'} fontFamily={'Bellefair'} textTransform={'uppercase'} padding={'10px 0'}>{info.travel}</Contenidop>
+					<Contenidop fontSize={'28px'} fontSizeMobile={'28px'} fontFamily={'Bellefair'} textTransform={'uppercase'} padding={'10px 0'}>{info.travel}</Contenidop>
 				</DivTravel>
 			</DivExtra>
 			</>
@@ -114,6 +114,19 @@ display: flex;
     align-content: flex-start;
     flex-wrap: wrap;
     flex-direction: column;
+
+	@media(max-width: 767px) {
+		display:flex;
+		justify-content:center;
+		align-content:center;
+		align-items:center;
+		flex-direction:row;
+		flex-wrap:wrap;
+		height:fit-content;
+		width:100%;
+		
+		padding-top:0;
+	  }
 `
 const LinkTabs = styled.a`
 
@@ -126,6 +139,9 @@ const LinkTabs = styled.a`
 		color:white;
 		
 
+	}
+	@media(max-width:767px){
+		padding-bottom:0;
 	}
 
 `
@@ -143,6 +159,12 @@ const Ultabs = styled.ul`
     list-style:none;
     padding:30px 0;
 
+	@media(max-width: 767px) {
+
+		padding:0;
+
+	}
+	
 `
 const LiTabs = styled.li`
 display:flex;
@@ -152,13 +174,16 @@ display:flex;
 
 const ImgPlaneta = styled.img`
 
-width:445px;
+width:50%;
 animation:${apperAnimation} 1s ease 0s 1 normal forwards;
 
 &:hover {
 
 }
+@media(max-width: 767px) {
 
+	width:35%;
+}
 
 `
 const Separator = styled.hr`
@@ -178,8 +203,15 @@ grid-template-columns:1fr 1fr;
 justify-content:center;
 aling-content:center;
 aling-items:center;
-text-align:Left;
+text-align:left;
 
+@media(max-width: 767px) {
+
+	display:flex;
+	flex-direction:column;
+	flex-wrap:wrap;
+	text-align:center;
+}
 
 `
 const DivDistancia = styled.div`
@@ -187,10 +219,18 @@ const DivDistancia = styled.div`
 grid-column:1;
 padding:20px 0;
 
+@media(max-width: 767px) {
+
+	padding:0;
+}
 `
 const DivTravel = styled.div`
 
 grid-column:2;
 padding:20px 0;
+@media(max-width: 767px) {
+
+	padding:0;
+}
 
 `

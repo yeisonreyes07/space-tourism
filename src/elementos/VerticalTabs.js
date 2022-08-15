@@ -3,8 +3,11 @@ import styled, { keyframes } from 'styled-components'
 import Data from '../Data/data.json'
 import { Tituloh2, Tituloh5, Contenidop, ContenidoSpan} from './Textos'
 import Launch from '../imagenes/technology/image-launch-vehicle-portrait.jpg'
+import LaunchMobile from '../imagenes/technology/image-launch-vehicle-landscape.jpg'
 import Spaceport from '../imagenes/technology/image-spaceport-portrait.jpg'
+import SpaceportMobile from '../imagenes/technology/image-spaceport-landscape.jpg'
 import Capsule from '../imagenes/technology/image-space-capsule-portrait.jpg'
+import CapsuleMobile from '../imagenes/technology/image-space-capsule-landscape.jpg'
 
 
 
@@ -15,13 +18,20 @@ const VerticalTabs = (props) => {
 	const Technology = (Data.technology)
 	const [tab, tabActiva] = useState(0)
 	const images = [Launch, Spaceport, Capsule]
-
+	const imagesMobile = [LaunchMobile , SpaceportMobile, CapsuleMobile]
 	//console.log(imageVehicle)
 
 	return (
+		<>
+		<Contenidop fontSize={'28px'} letterSpacing={'4.72px'} padding={'0% 5%'} display={'flex'} Row={'2 / 3'} >
+        <ContenidoSpan fontSize={'28px'} margin={'0 5px'} opacity={'0.25'} fontWeight={'600'}>03</ContenidoSpan>SPACE LAUCNH 101</Contenidop>
 		<DivSlides>
 			{images.map((info , index ) => {
-				return <Div gridColumn={`${props.gridColumnImgs}`} backgroundImage={tab === index ? info : ""}></Div>
+				return <Div gridColumn={`${props.gridColumnImgs}`} backgroundImage={tab === index ? info : ""} displayBlocks={tab === index ? 'flex' : 'none'}></Div>
+			})}
+
+			{imagesMobile.map((info , index ) => {
+				return <DivMobile gridColumn={`${props.gridColumnImgs}`} backgroundImage={tab === index ? info : ""} displayBlocks={tab === index ? 'flex' : 'none'}></DivMobile>
 			})}
 		
 		<DivContenido gridColumn={`${props.gridColumnTxts}`}>
@@ -29,8 +39,8 @@ const VerticalTabs = (props) => {
         
 		
 		<>{Technology === undefined ? <h2> OOps! ocurrio un error, intentelo de nuevo</h2> : Technology.map((info, index) => {
-			return <DivTitulosDescripciones>{tab === index ?  <><Tituloh5 fontSize={'28px'} fontColor={'#D0D6F9'} fontFamily={'Bellefair'} margin={'0 0 15px 0'} letterSpacing={'2.75px'}>THE TERMINOLOGY…</Tituloh5>
-												<Tituloh2 key={index} fontSize={'46px'} margin={'20px 0'} >{info.name}</Tituloh2>
+			return <DivTitulosDescripciones>{tab === index ?  <><Tituloh5 fontSize={'28px'} fontSizeMobile={'16px'} fontColor={'#D0D6F9'} fontFamily={'Bellefair'} margin={'0 0 15px 0'} letterSpacing={'2.75px'}>THE TERMINOLOGY…</Tituloh5>
+												<Tituloh2 fontSizeMobile={'40px'} key={index} fontSize={'46px'} margin={'20px 0'} >{info.name}</Tituloh2>
 													<Contenidop className='tabs' fontSize={'18px'} fontColor={'#D0D6F9'} key={info.index}>{info.description}</Contenidop></>
 			:
 			""
@@ -57,6 +67,7 @@ const VerticalTabs = (props) => {
 
 		</DivContenido>
 		</DivSlides>
+		</>
 	)
 }
 
@@ -80,6 +91,13 @@ const DivSlides = styled.div`
   scroll-snap-align:start;
   display:contents;
 
+  @media(max-width:767px){
+	display:grid;
+  grid-template-columns:1fr;
+  grid-template-rows:1fr 1fr;
+  width:100%;
+	
+  }
 `
 
 const DivTitulosDescripciones = styled.div`
@@ -93,11 +111,19 @@ const DivTitulosDescripciones = styled.div`
     align-items: flex-start;
 	padding:5%;
 
+	@media(max-width:767px){
+
+		grid-row:2;
+		align-items: center;
+
+
+	}
+
 `
 
 const Div = styled.div`
 
-display: flex;
+display: ${(props) => props.displayBlocks ? props.displayBlocks : '' };
 flex-direction: column;
 flex-wrap: wrap;
 justify-content: flex-end;
@@ -106,10 +132,45 @@ grid-row:3 / 4;
 align-items: center;
 background-image:url('${(props) => props.backgroundImage ? props.backgroundImage : '' }');
 background-repeat:no-repeat;
-background-size:60%;
+background-size:80%;
 background-position:center right;
 grid-column:${(props) => props.gridColumn ? props.gridColumn : '' };
+
+@media(max-width:767px){
+
+	display:none;
+}
+
 `
+const DivMobile = styled.div`
+
+display: ${(props) => props.displayBlocks ? props.displayBlocks : '' };
+flex-direction: column;
+flex-wrap: wrap;
+justify-content: flex-end;
+align-content: center;
+grid-row:3 / 4;
+align-items: center;
+background-image:url('${(props) => props.backgroundImage ? props.backgroundImage : '' }');
+background-repeat:no-repeat;
+background-size:cover;
+background-position:center;
+grid-column:${(props) => props.gridColumn ? props.gridColumn : '' };
+display:none;
+
+@media(max-width:767px){
+
+	width:100%;
+	height:70%;
+	margin:auto;
+	grid-row:1 ;
+	grid-column:1;
+	display:block;
+	object-fit:cover;
+}
+
+`
+
 const DivContenido = styled.div`
 
 grid-column:${(props) => props.gridColumn ? props.gridColumn : ''};
@@ -117,6 +178,13 @@ grid-row:3 / 4;
 width:100%;
 display: grid;
 grid-template-columns:20% 80%;
+
+@media(max-width:767px){
+
+	grid-template-columns:1fr;
+	grid-template-rows:50px 1fr;
+	grid-row:2;
+}
 
    
 `
@@ -132,6 +200,10 @@ const LinkTabs = styled.div`
 		color:white;
 		
 
+	}
+	@media(max-width:767px){
+
+		padding:0 10px;
 	}
 
 `
@@ -151,10 +223,24 @@ const DivTabs = styled.div`
 	grid-column:1 / 2;
 	grid-row:1 / 2 ;
 
+	@media(max-width:767px){
+
+		grid-row:1;
+		flex-direction: row;
+		grid-column:1 / 3;
+		padding:10px 0;
+		height: fit-content;
+	}
+
 `
 const LiTabs = styled.div`
 display:flex;
 
+@media(max-width:767px){
+
+	
+	margin:0;
+}
 
 `
 
@@ -174,4 +260,11 @@ const Dots = styled.div`
 	animation:${apperAnimation} 1s ease 0s 1 normal forwards;
 	transition:.3s ease-in;
 
+	@media(max-width:767px){
+
+		width:58px;
+		height: 58px;
+		font-size: 24px;
+		margin:0;
+	}
 `

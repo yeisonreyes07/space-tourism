@@ -62,8 +62,20 @@ const Tituloh2 = styled.h2`
   text-transform:uppercase;
   grid-column:${(props) =>  props.gridColumn ? props.gridColumn : '1'};
   animation:${apperAnimation} 1s ease 0s 1 normal forwards;
-  letter-spacing:${(props) => props.letterSpacing ? props.letterSpacing : '4.75px'};
+ 
   user-select: none;
+
+  @media(max-width: 767px) {
+    font-size:${(props) =>  props.fontSizeMobile ? props.fontSizeMobile : '56px'};
+    line-height:56px;
+    word-break: break-word;
+    text-align:center;
+    margin:0px 0;
+    }
+  @media(max-width: 467px) {
+    font-size:${(props) =>  props.fontSizeMobile ? props.fontSizeMobile : '56px'};
+    word-break: break-word;
+  }
 `
 
 const Tituloh4 = styled.h4` 
@@ -100,7 +112,8 @@ const Tituloh5 = styled.h5`
         @media(max-width: 767px) {
           word-wrap:break-word;
           text-align:center;
-          font-size:20px;
+          font-size:${(props) =>  props.fontSizeMobile ? props.fontSizeMobile : '20px'};
+          margin:0;
         }
 
         @media(max-width: 467px) {
@@ -130,7 +143,10 @@ const Contenidop = styled.p`
       @media(max-width: 767px) {
           word-wrap:break-word;
           text-align:center;
-          font-size:16px;
+          font-size:${(props) => props.fontSizeMobile ? props.fontSizeMobile : '15px'};
+          max-width:${(props) => props.widthContainer ? props.widthContainer : '100%'};
+          margin:0 auto;
+          line-height:${(props) => props.fontSizeMobile ? props.fontSizeMobile  : '25px'};
         }
       
 
@@ -147,7 +163,12 @@ const ContenidoSpan = styled.span`
   text-transform:${(props) => props.textTransform ? 'uppercase' : props.textTransform};
   margin:${(props) => props.margin ? props.margin : '0'};
   line-height: 32px;
-  
+
+  @media(max-width: 767px) {
+    word-wrap:break-word;
+    text-align:center;
+    font-size:${(props) => props.fontSizeMobile ? props.fontSizeMobile : '16px'};
+  }
 `
 
 export  {Body, Tituloh5, Contenidop, Tituloh1, Tituloh4, Tituloh2, ContenidoSpan};

@@ -1,5 +1,5 @@
 import React , {useState } from 'react'
-import styled from 'styled-components'
+import styled ,{ keyframes } from 'styled-components'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars } from '@fortawesome/free-solid-svg-icons/faBars'
 import { faXmark } from '@fortawesome/free-solid-svg-icons/faXmark'
@@ -79,11 +79,36 @@ const Menu = () => {
 
 export default Menu
 
+const apperAnimation = keyframes`
+
+0% {
+    opacity: 0;
+    transform: translatex(70%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translatex(0);
+  }
+`
+const apperAnimationIcon = keyframes`
+
+0% {
+    opacity: 0;
+    
+  }
+
+  100% {
+    opacity: 1;
+   
+  }
+  `
+
 const DivFixed = styled.div`
 
 position:fixed;
 width:100%;
-padding:1% 0;
+
 z-index:9; 
 
 @media (max-width:767px){
@@ -109,10 +134,13 @@ const DivOpenMenu = styled.div`
   overflow-x: hidden; 
   padding-top: 60px; 
   transition: 0.5s;
+  animation:${apperAnimation} 1s ease 0s 1 normal forwards;
 
 @media (min-width:767px){
 
    display:none;
+   
+
    
 }
 `
@@ -133,7 +161,7 @@ display: grid;
 
         display:flex ;
         justify-content:space-between;
-        padding: 2% 2%;
+        
         width: 100%;
         align-content: center;
         align-items: center;
@@ -141,6 +169,7 @@ display: grid;
 `
 const ImgLogo = styled.img`
 grid-column:1;
+padding: 1rem;
 
 `
 const Separator = styled.hr`
@@ -181,11 +210,12 @@ grid-column: 3 / 4;
 const UlMenuMobile = styled.ul `
     color: white;
     cursor: pointer;
-    margin: 0.5em 1em;
+    margin: 0.5em 0;
     padding: 0.25em 1em;
     border-radius: 3px;
     font-size:32px;
     z-index:10;
+    animation:${apperAnimationIcon} 1s ease 0s 1 normal forwards;
 
     @media (min-width:767px){
 
