@@ -1,4 +1,4 @@
-import React, {useState , useEffect} from 'react'
+import React, {useState } from 'react'
 import styled, { keyframes } from 'styled-components'
 import Data from '../Data/data.json'
 import { Tituloh2, Tituloh5, Contenidop, ContenidoSpan} from './Textos'
@@ -13,8 +13,6 @@ import CapsuleMobile from '../imagenes/technology/image-space-capsule-landscape.
 
 const VerticalTabs = (props) => {
 
-	const section = props.name;
-	const require = Data + props.section;
 	const Technology = (Data.technology)
 	const [tab, tabActiva] = useState(0)
 	const images = [Launch, Spaceport, Capsule]

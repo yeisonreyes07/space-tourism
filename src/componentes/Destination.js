@@ -1,5 +1,4 @@
 import React from 'react'
-import styled, { keyframes } from 'styled-components'
 import { Contenidop, ContenidoSpan } from '../elementos/Textos'
 import TabsInfo from '../elementos/TabsInfo'
 

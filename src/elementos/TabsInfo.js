@@ -1,4 +1,4 @@
-import React, {useState , useEffect} from 'react'
+import React, {useState } from 'react'
 import styled, { keyframes } from 'styled-components'
 import Data from '../Data/data.json'
 import { Tituloh2, Tituloh5, Contenidop, ContenidoSpan} from './Textos'
@@ -9,8 +9,6 @@ import Titan from '../imagenes/destination/image-titan.webp'
 
 const TabsInfo = (props) => {
 
-	const section = props.name;
-	const require = Data + props.section;
 	const Destinations = (Data.destinations)
 	const [tab, tabActiva] = useState(0)
 	const images = [Luna, Marte, Europa, Titan]

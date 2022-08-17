@@ -1,4 +1,4 @@
-import React, {useState , useEffect} from 'react'
+import React, {useState } from 'react'
 import styled, { keyframes } from 'styled-components'
 import Data from '../Data/data.json'
 import { Tituloh2, Tituloh5, Contenidop, ContenidoSpan} from './Textos'
@@ -10,8 +10,6 @@ import Ansari from '../imagenes/crew/image-anousheh-ansari.webp'
 
 const TabsInfo = (props) => {
 
-	const section = props.name;
-	const require = Data + props.section;
 	const Crew = (Data.crew)
 	const [tab, tabActiva] = useState(0)
 	const images = [Douglas, Mark, Victor, Ansari]

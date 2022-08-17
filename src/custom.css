@@ -23,7 +23,34 @@ body {
     text-decoration:none;
 	  
 	}
-	
+.intituloh5 {
+	font-family:'Barlow';
+	font-weight: 400;
+	line-height:32px;
+	text-transform:uppercase;
+	text-align:left;
+	font-size:'28px';
+	  color:#fff;
+	  letter-spacing:4.75px;
+	  margin:0;
+	  grid-column:1;
+	  user-select: none;
+    text-decoration:none;
+	border-bottom:solid 3px #fff;
+
+}
+.tituloh4 {
+        font-family: 'Bellefair',serif;
+        font-weight: 300;
+        font-size: 28px;
+        color: #000;
+        -webkit-letter-spacing: 4.75px;
+        -moz-letter-spacing: 4.75px;
+        -ms-letter-spacing: 4.75px;
+        letter-spacing: 4.75px;
+        margin: 0;
+        text-decoration: none;
+      }
 	@media (max-width: 767px) {
 	  .tituloh5 {
 	  word-wrap:break-word;

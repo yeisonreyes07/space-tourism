@@ -1,6 +1,8 @@
 import React from 'react'
 import styled, { keyframes } from 'styled-components'
-import {Tituloh1, Tituloh5,Tituloh4, Contenidop} from '../elementos/Textos'
+import { NavLink } from "react-router-dom";
+import {Tituloh1, Tituloh5, Contenidop} from '../elementos/Textos'
+
 
 
 const Home = () => {
@@ -18,11 +20,11 @@ const Home = () => {
         </Contenidop>
     </Div>
         <Divcirculo>
-            <Link href="#">
+        <NavLink className="tituloh4" to="/destination">
             <Circulo onMouseEnter="exploreEnter">
-                <Tituloh4 fontColor={'#000'} fontSize={'32px'}>EXPLORE</Tituloh4>
+                <NavLink className="tituloh4" to="/destination">EXPLORE</NavLink>
             </Circulo>
-            </Link>
+            </NavLink>
         </Divcirculo>
     </DivSlides>
     )
@@ -44,7 +46,7 @@ flex-direction: column;
 flex-wrap: wrap;
 justify-content: center;
 align-content: flex-start;
-grid-row:2;
+grid-row:1;
 margin:5%;
 `
 
@@ -56,7 +58,7 @@ flex-direction: row;
 flex-wrap: wrap;
 justify-content: center;
 align-content: center;
-grid-row:2;
+grid-row:1;
 
 
 `
@@ -116,11 +118,5 @@ display: flex;
 }
 `
 
-
-const Link = styled.a`
-
-    text-decoration:none;
-
-`
 
 

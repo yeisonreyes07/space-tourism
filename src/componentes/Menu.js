@@ -4,7 +4,7 @@ import styled ,{ keyframes } from 'styled-components'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars } from '@fortawesome/free-solid-svg-icons/faBars'
 import { faXmark } from '@fortawesome/free-solid-svg-icons/faXmark'
-import { Tituloh5, ContenidoSpan} from '../elementos/Textos'
+import { ContenidoSpan} from '../elementos/Textos'
 import Logo from '../imagenes/shared/logo.svg'
 
 
@@ -21,19 +21,19 @@ const Menu = () => {
             <UlMenu>
                 <LiMenu>
                     <ContenidoSpan fontSize={'16px'} margin={'0 5px'}>00 </ContenidoSpan>
-                    <NavLink className="tituloh5" to="/">HOME</NavLink>
+                    <NavLink className={({isActive}) => isActive ? 'intituloh5' : 'tituloh5'} to="/">HOME</NavLink>
                 </LiMenu>
                 <LiMenu>
                     <ContenidoSpan fontSize={'16px'} margin={'0 5px'}>01 </ContenidoSpan>
-                    <NavLink className="tituloh5" to="/destination"> DESTINATION</NavLink>
+                    <NavLink className={({isActive}) => isActive ? 'intituloh5' : 'tituloh5'} to="/destination"> DESTINATION</NavLink>
                 </LiMenu>
                 <LiMenu>
                     <ContenidoSpan fontSize={'16px'} margin={'0 5px'}>02 </ContenidoSpan>
-                    <NavLink className="tituloh5" to="/crew"> CREW</NavLink>
+                    <NavLink className={({isActive}) => isActive ? 'intituloh5' : 'tituloh5'} to="/crew"> CREW</NavLink>
                 </LiMenu>
                 <LiMenu>
                     <ContenidoSpan fontSize={'16px'} margin={'0 5px'}>03 </ContenidoSpan>
-                    <NavLink className="tituloh5" to="/technology"> TECHNOLOGY</NavLink>
+                    <NavLink className={({isActive}) => isActive ? 'intituloh5' : 'tituloh5'} to="/technology"> TECHNOLOGY</NavLink>
 
                 </LiMenu>
                 
@@ -50,21 +50,21 @@ const Menu = () => {
             
             <DivOpenMenu>
                 <UlMenuSidebar>
-                <LiMenu>
+                <LiMenu onClick={() => iconMenu === faBars ? setIcon(faXmark) :  setIcon(faBars) }>
                     <ContenidoSpan fontSize={'16px'} margin={'0 5px'}>00 </ContenidoSpan>
-                    <NavLink className="tituloh5" to="/">HOME</NavLink>
+                    <NavLink className='tituloh5' to="/">HOME</NavLink>
                 </LiMenu>
-                <LiMenu>
+                <LiMenu onClick={() => iconMenu === faBars ? setIcon(faXmark) :  setIcon(faBars) }>
                     <ContenidoSpan fontSize={'16px'} margin={'0 5px'}>01 </ContenidoSpan>
-                    <NavLink className="tituloh5" to="/destination"> DESTINATION</NavLink>
+                    <NavLink className='tituloh5' to="/destination"> DESTINATION</NavLink>
                 </LiMenu>
-                <LiMenu>
+                <LiMenu onClick={() => iconMenu === faBars ? setIcon(faXmark) :  setIcon(faBars) }>
                     <ContenidoSpan fontSize={'16px'} margin={'0 5px'}>02 </ContenidoSpan>
-                    <NavLink className="tituloh5" to="/crew"> CREW</NavLink>
+                    <NavLink className='tituloh5' to="/crew"> CREW</NavLink>
                 </LiMenu>
-                <LiMenu>
+                <LiMenu onClick={() => iconMenu === faBars ? setIcon(faXmark) :  setIcon(faBars) }>
                     <ContenidoSpan fontSize={'16px'} margin={'0 5px'}>03 </ContenidoSpan>
-                    <NavLink className="tituloh5" to="/technology"> TECHNOLOGY</NavLink>
+                    <NavLink className='tituloh5' to="/technology"> TECHNOLOGY</NavLink>
                 </LiMenu>
                 
             </UlMenuSidebar>
