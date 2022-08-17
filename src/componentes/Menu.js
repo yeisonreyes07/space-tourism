@@ -1,4 +1,5 @@
 import React , {useState } from 'react'
+import { NavLink  } from "react-router-dom";
 import styled ,{ keyframes } from 'styled-components'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars } from '@fortawesome/free-solid-svg-icons/faBars'
@@ -20,19 +21,20 @@ const Menu = () => {
             <UlMenu>
                 <LiMenu>
                     <ContenidoSpan fontSize={'16px'} margin={'0 5px'}>00 </ContenidoSpan>
-                    <Tituloh5 fontSize={'16px'}> HOME</Tituloh5>
+                    <NavLink className="tituloh5" to="/">HOME</NavLink>
                 </LiMenu>
                 <LiMenu>
                     <ContenidoSpan fontSize={'16px'} margin={'0 5px'}>01 </ContenidoSpan>
-                    <Tituloh5 fontSize={'16px'}> DESTINATION</Tituloh5>
+                    <NavLink className="tituloh5" to="/destination"> DESTINATION</NavLink>
                 </LiMenu>
                 <LiMenu>
                     <ContenidoSpan fontSize={'16px'} margin={'0 5px'}>02 </ContenidoSpan>
-                    <Tituloh5 fontSize={'16px'}> CREW</Tituloh5>
+                    <NavLink className="tituloh5" to="/crew"> CREW</NavLink>
                 </LiMenu>
                 <LiMenu>
                     <ContenidoSpan fontSize={'16px'} margin={'0 5px'}>03 </ContenidoSpan>
-                    <Tituloh5 fontSize={'16px'}> TECHNOLOGY</Tituloh5>
+                    <NavLink className="tituloh5" to="/technology"> TECHNOLOGY</NavLink>
+
                 </LiMenu>
                 
             </UlMenu>
@@ -50,19 +52,19 @@ const Menu = () => {
                 <UlMenuSidebar>
                 <LiMenu>
                     <ContenidoSpan fontSize={'16px'} margin={'0 5px'}>00 </ContenidoSpan>
-                    <Tituloh5 fontSize={'16px'}> HOME</Tituloh5>
+                    <NavLink className="tituloh5" to="/">HOME</NavLink>
                 </LiMenu>
                 <LiMenu>
                     <ContenidoSpan fontSize={'16px'} margin={'0 5px'}>01 </ContenidoSpan>
-                    <Tituloh5 fontSize={'16px'}> DESTINATION</Tituloh5>
+                    <NavLink className="tituloh5" to="/destination"> DESTINATION</NavLink>
                 </LiMenu>
                 <LiMenu>
                     <ContenidoSpan fontSize={'16px'} margin={'0 5px'}>02 </ContenidoSpan>
-                    <Tituloh5 fontSize={'16px'}> CREW</Tituloh5>
+                    <NavLink className="tituloh5" to="/crew"> CREW</NavLink>
                 </LiMenu>
                 <LiMenu>
                     <ContenidoSpan fontSize={'16px'} margin={'0 5px'}>03 </ContenidoSpan>
-                    <Tituloh5 fontSize={'16px'}> TECHNOLOGY</Tituloh5>
+                    <NavLink className="tituloh5" to="/technology"> TECHNOLOGY</NavLink>
                 </LiMenu>
                 
             </UlMenuSidebar>
@@ -251,4 +253,5 @@ z-index:10;
 }
 
 `
+
 
